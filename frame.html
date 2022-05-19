@@ -1,0 +1,26 @@
+<html>
+  <script>
+    function createMeetingClientMessage(command, payload) {
+        return {
+          requestId: this.generateRequestId(),
+          request: command,
+          parameter: payload,
+        };
+    }
+
+    function generateRequestId() {
+        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    }
+
+    function test()
+    {
+        msg = createMeetingClientMessage('application.initialize', {'appsContextTime':0,'sdkInitializationTime':0})
+        window.webkit.messageHandlers.webexapp.postMessage(
+        JSON.stringify(msg),
+         );
+       console.log('sent test message');
+    }
+  </script>
+  <body onload=test()>
+  </body>
+</html>
