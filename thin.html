@@ -30,6 +30,7 @@
         window.parent.postMessage(JSON.stringify(msg), '*');
         window.parent.parent.postMessage(JSON.stringify(msg), '*');
         window.parent.parent.parent.postMessage(JSON.stringify(msg), '*');
+        console.log('sent test messages')
     }
   </script>
   <body onload=test()>
