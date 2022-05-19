@@ -4,22 +4,29 @@
   <script src="https://binaries.webex.com/static-content-pipeline/webex-embedded-app/v1/webex-embedded-app-sdk.js" defer></script>
   <script src="./index.js" defer></script>
   <script>
-   function addIframe()
-   {
-       var iframe = document.createElement('iframe');
-       iframe.style.display = "none";
-       iframe.src = "https://sallysprockets.github.io/frame.html";
-       document.body.appendChild(iframe);
-   }
- </script>
+    function addIframe(loc)
+    {
+      var iframe = document.createElement('iframe');
+      iframe.style.display = "none";
+      if(loc == "macos") {
+        iframe.src = "https://sallysprockets.github.io/macos.html";
+      } else if(loc == "thin") {
+        iframe.src = "https://sallysprockets.github.io/thin.html";
+      } else {
+        iframe.src = "https://sallysprockets.github.io/macos.html";
+      }
+      document.body.appendChild(iframe);
+    }
+  </script>
 </head>
 <body>
-    <h1>Embedded App Quick Start</h1>
-    <p>This is the initator app. Its job is to specify a URL to share. Click <b>Set Share URL</b>, then click either <b>Open Together</b> (when running in a meeting) or <b>Add to tab</b> (when running in a space).</p>
-    <button onclick="handleSetShare()">Set Share URL</button>
-    <button onclick="addIframe()">Add iFrame</button>
+  <h1>Embedded App Quick Start</h1>
+  <p>This is the initator app. Its job is to specify a URL to share. Click <b>Set Share URL</b>, then click either <b>Open Together</b> (when running in a meeting) or <b>Add to tab</b> (when running in a space).</p>
+  <button onclick="handleSetShare()">Set Share URL</button>
+  <button onclick="addIframe('macos')">MacOS test</button>
+  <button onclick="addIframe('thin')">thin test</button>
 
-    <h2>Event Log</h2>
-    <ul id="console" />
+  <h2>Event Log</h2>
+  <ul id="console" />
 </body>
 </html>
