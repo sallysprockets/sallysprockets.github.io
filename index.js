@@ -4,6 +4,17 @@ var app = new window.Webex.Application();
 // Wait for onReady() promise to fulfill before using framework
 app.onReady().then(() => {
     log("App ready. Instance", app);
+    // Display the ID of the current user
+    app.context.getUser().then((user)=> {
+        log("User ID", user.id)
+    }).catch((errorcode) => {
+        log("Error", errorcode)
+    })
+    app.context.getMeeting().then((meeting)=> {
+        log("Meeting ID", meeting.id)
+    }).catch((errorcode) => {
+        log("Error", errorcode)
+    })
 }).catch((errorcode) =>  {
     log("Error with code: ", Webex.Application.ErrorCodes[errorcode])
 });
