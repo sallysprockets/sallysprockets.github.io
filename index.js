@@ -9,7 +9,7 @@ app.onReady().then(() => {
         log("Userobj", user)
         log("User ID", user.id)
         log("User email", user.email)
-        log("User org", user.orgID)
+        log("User org", user.orgId)
         log("User token", user.token)
     }).catch((errorcode) => {
         log("Error", errorcode)
