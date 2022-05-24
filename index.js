@@ -6,9 +6,11 @@ app.onReady().then(() => {
     log("App ready. Instance", app);
     // Display the ID of the current user
     app.context.getUser().then((user)=> {
+        log("Userobj", user)
         log("User ID", user.id)
         log("User email", user.email)
-        log(user)
+        log("User org", user.orgID)
+        log("User token", user.token)
     }).catch((errorcode) => {
         log("Error", errorcode)
     })
