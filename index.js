@@ -7,6 +7,8 @@ app.onReady().then(() => {
     // Display the ID of the current user
     app.context.getUser().then((user)=> {
         log("User ID", user.id)
+        log("User email", user.email)
+        log(user)
     }).catch((errorcode) => {
         log("Error", errorcode)
     })
